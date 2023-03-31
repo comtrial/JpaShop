@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class JpaShopApplication {
-
-	public static void main(String[] args) {
+		//git test
+		public static void main(String[] args) {
 		SpringApplication.run(JpaShopApplication.class, args);
 	}
 	@GetMapping("/hello")
