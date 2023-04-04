@@ -13,6 +13,10 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 public class ItemService {
+
+    // TODO: final 에 대한 필요성
+    // 아래의 repo 변수 선언시 final 을 붙혀주는게 맞는데 학습이 부족해서
+    // final 을 붙여야 하는 이유에 대한 공감을 못한 듯
     @Autowired
     private ItemRepository itemRepository;
 

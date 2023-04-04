@@ -13,6 +13,7 @@ import java.util.List;
 // 해당 작업의 Rollback 또한 진행해 주기에, 하나의 Repository 에서의 Transactional 작업을 해주기 보다는
 // 비즈니스 로직의 시작점인 @Service 에서 Transactional 을 해주는 것이 보다 상위 작업에 대한 관리가 가능해진다.
 public class MemberRepository {
+    // @PersistenceContext 를 통해 스프링이 EntityManager 를 주입해 준다.
     @PersistenceContext
     private EntityManager em;
 

@@ -4,7 +4,7 @@ import lombok.Getter;
 
 import javax.persistence.Embeddable;
 
-//COMMENT: 값 타입의 특징으로 생성사들 통한 생성만 가능하도록 설계 하기 위해서 Setter를 제공하지 않게 설계한다.
+//COMMENT: 값 타입의 특징으로 생성사들 통한 생성만 가능하도록 설계 하기 위해서 Setter 를 제공하지 않게 설계한다.
 @Embeddable //JPA 에 내장 타입으로 존재 할 수 있음을 명시
 @Getter
 //@Setter
