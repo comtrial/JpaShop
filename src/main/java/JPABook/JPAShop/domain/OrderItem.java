@@ -25,4 +25,17 @@ public class OrderItem {
 
     private int orderPrice;
     private int count;
+
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+
+    }
+
+    public void cancel() {
+        this.item.addStock(this.count);
+    }
+
+    // 왜 getter 를 사용하지 않고 변수 값으로
+    public int getTotalPrice() {
+        return orderPrice * count;
+    }
 }

@@ -50,4 +50,38 @@ public class Order {
         this.delivery = delivery;
         delivery.setOrder(this);
     }
+
+    //==생성 메서드==//
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+
+        for (OrderItem orderItem : orderItems) {
+            order.orderItems.add(orderItem);
+        }
+
+        order.setOrderDate(LocalDateTime.now());
+        order.setStatus(OrderStatus.ORDER);
+        return order;
+    }
+
+    //==비즈니스 로직==//
+    public void cancel() {
+        if (this.delivery.getStatus() == DeliveryStatus.COMP) {
+            throw new IllegalStateException("이미 배달이 완료되었습니다");
+        }
+
+        for (OrderItem orderItem: this.orderItems) {
+            orderItem.cancel();
+        }
+
+        this.status = OrderStatus.CANCEL;
+    }
+
+    //==조회 로직==//
+    public int getTotalPrice() {
+//        int totalPrice = this.orderItems.stream().mapToInt(OrderItem::getOrderPrice).sum();
+        return this.orderItems.stream().mapToInt(OrderItem::getTotalPrice).sum();
+    }
 }
