@@ -1,7 +1,6 @@
 package JPABook.JPAShop.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,6 +11,7 @@ import java.util.List;
 @Table(name = "orders") //원래는 기본적으로 클래스 이름 따라 가능대 order 는 예약어라 바까줘야대(테이블 명 변경하는 방법)
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
     @Id
